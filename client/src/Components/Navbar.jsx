@@ -157,7 +157,7 @@ const Navbar = ({ currentUser }) => {
           <Navlink to="/workouts">Workouts</Navlink>
           <Navlink to="/tutorials">Tutorials</Navlink>
           <Navlink to="/blogs">Blogs</Navlink>
-          <Navlink to="/contact">Contact</Navlink>
+          <Navlink to="/contact">Trainer</Navlink>
         </NavItems>
 
         <UserContainer>

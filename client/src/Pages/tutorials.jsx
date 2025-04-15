@@ -1,29 +1,85 @@
 import React from 'react';
-import './tutorial.css'; // Assuming a separate CSS file for styling
+import './tutorial.css';
 
-const workouts = [
-  { name: 'Chest ', image: 'https://i.ytimg.com/vi/m52z1OC1tQo/maxresdefault.jpg' },
-  { name: 'Triceps ', image: 'https://fitliferegime.com/wp-content/uploads/2021/06/Triceps-Pushdown.jpg' },
-  { name: 'Biceps ', image: 'https://i.pinimg.com/originals/29/fc/22/29fc22ba068375a4baebdf3539607a11.jpg' },
-  { name: 'shoulder ', image: 'https://th.bing.com/th/id/OIP.KbKD_Q2QoBCWFD3FaVRQ4QHaHa?rs=1&pid=ImgDetMain' },
-  { name: 'Back ', image: 'https://th.bing.com/th/id/R.d678d36747c631b811cf4648c90dbee9?rik=WU%2bL7Ggp9PHoIA&riu=http%3a%2f%2fwww.yeahwetrain.com%2fupload%2f20180317152750uid1.jpg&ehk=v7tSk1TTI%2bR1l%2b2Bd%2fw40CCjQ%2b3cZGcO4vyhHZJ4vcc%3d&risl=&pid=ImgRaw&r=0' },
-  { name: 'Legs ', image: 'https://i.pinimg.com/originals/0a/dc/b2/0adcb233e6dd0bc5f321258f525fc7a9.jpg' },
-];
+const WorkoutTutorial = () => {
+  // Workout data array
+  const workouts = [
+    {
+      id: 1,
+      name: 'Chest Workout',
+      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+      videoUrl: 'https://www.youtube.com/watch?v=SaF9Gm0yq0Q'
+    },
+    {
+      id: 2,
+      name: 'Triceps Workout',
+      image: 'https://images.unsplash.com/photo-1534258936925-c58bed479fcb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+      videoUrl: 'https://www.youtube.com/watch?v=6SS6k3aXA4s'
+    },
+    {
+      id: 3,
+      name: 'Biceps Workout',
+      image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+      videoUrl: 'https://www.youtube.com/watch?v=ykJmrZ5v0Oo'
+    },
+    {
+      id: 4,
+      name: 'Shoulders Workout',
+      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+      videoUrl: 'https://www.youtube.com/watch?v=3VcKaXpzqRo'
+    },
+    {
+      id: 5,
+      name: 'Legs Workout',
+      image: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+      videoUrl: 'https://www.youtube.com/watch?v=YyvSfVjQeL0'
+    },
+    {
+      id: 6,
+      name: 'Back Workout',
+      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+      videoUrl: 'https://www.youtube.com/watch?v=ROXyfu7uB2w'
+    }
+  ];
 
-const Tutorial = () => {
   return (
-    <div className="workout-container">
-      <h1>Workout Types</h1>
-      <div className="workout-grid">
-        {workouts.map((workout, index) => (
-          <div key={index} className="workout-card">
-            <img src={workout.image} alt={workout.name} className="workout-image" />
-            <h3>{workout.name}</h3>
+    <div className="workout-tutorial">
+      <header className="tutorial-header">
+        <h1>Fitness Workout Tutorials</h1>
+        <p>Learn proper techniques for each muscle group with our expert guides</p>
+      </header>
+      
+      <div className="workout-grid-three-col">
+        {workouts.map((workout) => (
+          <div key={workout.id} className="workout-card">
+            <div className="workout-image-container">
+              <img 
+                src={workout.image} 
+                alt={workout.name} 
+                className="workout-image"
+                loading="lazy"
+              />
+              <div className="workout-overlay">
+                <h3>{workout.name}</h3>
+              </div>
+            </div>
+            <a
+              href={workout.videoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="video-button"
+            >
+              Watch Video
+            </a>
           </div>
         ))}
       </div>
+      
+      <footer className="tutorial-footer">
+        <p>For more workout routines and fitness tips, visit our full training program.</p>
+      </footer>
     </div>
   );
 };
 
-export default Tutorial;
+export default WorkoutTutorial;

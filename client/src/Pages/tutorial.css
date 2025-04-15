@@ -1,44 +1,122 @@
-.workout-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
+.workout-tutorial {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.tutorial-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.tutorial-header h1 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.tutorial-header p {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+/* 3-column grid layout */
+.workout-grid-three-col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.workout-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.workout-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.workout-image-container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.workout-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.workout-card:hover .workout-image {
+  transform: scale(1.05);
+}
+
+.workout-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  padding: 20px;
+  color: white;
+}
+
+.workout-overlay h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.video-button {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  background-color: #e74c3c;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.video-button:hover {
+  background-color: #c0392b;
+}
+
+.tutorial-footer {
+  text-align: center;
+  padding: 20px;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  border-top: 1px solid #ecf0f1;
+}
+
+/* Responsive adjustments for 3-column layout */
+@media (max-width: 992px) {
+  .workout-grid-three-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .workout-grid-three-col {
+    grid-template-columns: 1fr;
   }
   
-  .workout-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .workout-card {
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-  }
-  
-  .workout-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .workout-image {
-    width: 100%;
+  .workout-image-container {
     height: 200px;
-    object-fit: cover;
   }
-  
-  h1 {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+  .tutorial-header h1 {
+    font-size: 2rem;
   }
-  
-  h3 {
-    font-family: 'Arial', sans-serif;
-    color: #555;
-    padding: 10px;
-    margin: 0;
-  }
+}
