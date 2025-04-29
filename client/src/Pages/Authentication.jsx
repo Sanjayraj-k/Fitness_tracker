@@ -7,7 +7,7 @@ import SignUp from "../Components/Signup";
 
 const Container = styled.div`
   flex: 1;
-  height: 100%;
+  height: 100vh;
   display: flex;
   background: ${({ theme }) => theme.bg};
   @media (max-width: 700px) {
@@ -17,10 +17,10 @@ const Container = styled.div`
 const Left = styled.div`
   flex: 1;
   position: relative;
+  height: 100vh;
   @media (max-width: 700px) {
     display: none;
   }
-    height:100%
 `;
 const Logo = styled.img`
   position: absolute;
@@ -30,9 +30,11 @@ const Logo = styled.img`
   z-index: 10;
 `;
 const Image = styled.img`
-  position: relative;
-  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
   object-fit: cover;
 `;
 
