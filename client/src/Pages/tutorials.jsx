@@ -1,44 +1,49 @@
 import React from 'react';
 import './tutorial.css';
-
+import chest from '../images/chest.jpg';
+import tricpes from '../images/tricpes.jpg'
+import biceps from '../images/biceps.jpg';
+import shoulder from '../images/shoulder.webp';
+import leg from '../images/leg.jpg';
+import lat from '../images/lat.webp';
 const WorkoutTutorial = () => {
   // Workout data array
   const workouts = [
     {
       id: 1,
       name: 'Chest Workout',
-      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      videoUrl: 'https://www.youtube.com/watch?v=SaF9Gm0yq0Q'
+      image: chest,
+      videoUrl: 'https://youtu.be/ChDeUAJc9bE?si=-rKjaAw4bqqTbClr'
     },
     {
       id: 2,
       name: 'Triceps Workout',
-      image: 'https://images.unsplash.com/photo-1534258936925-c58bed479fcb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      videoUrl: 'https://www.youtube.com/watch?v=6SS6k3aXA4s'
+      image: tricpes,
+      videoUrl: 'https://youtu.be/SuajkDYlIRw?si=R3r7wVam31YUmbk-'
     },
     {
       id: 3,
       name: 'Biceps Workout',
-      image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      videoUrl: 'https://www.youtube.com/watch?v=ykJmrZ5v0Oo'
+      image: biceps,
+      videoUrl: 'https://youtu.be/2S_9dQylItg?si=suiURcin4sAk9Xse'
     },
     {
       id: 4,
       name: 'Shoulders Workout',
-      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      videoUrl: 'https://www.youtube.com/watch?v=3VcKaXpzqRo'
+      image: shoulder,
+      videoUrl: 'https://youtu.be/sUNv3uHAP6I?si=0SAn4f-m7_Ng-n55'
     },
     {
       id: 5,
       name: 'Legs Workout',
-      image: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      videoUrl: 'https://www.youtube.com/watch?v=YyvSfVjQeL0'
+      image: leg,
+      videoUrl: 'https://youtu.be/DpIeBMgh2OA?si=Gcx_Gpz_oWml0FT8'
     },
     {
       id: 6,
       name: 'Back Workout',
-      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-      videoUrl: 'https://www.youtube.com/watch?v=ROXyfu7uB2w'
+      image: lat,
+      videoUrl: 'https://youtu.be/zgfcOWuTeYA?si=_BXrbumLd3r_Uku3'
     }
   ];
 

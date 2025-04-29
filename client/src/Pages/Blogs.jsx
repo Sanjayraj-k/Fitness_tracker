@@ -10,7 +10,8 @@ const BlogGrid = () => {
       image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       category: "Training",
       date: "May 15, 2023",
-      readTime: "8 min read"
+      readTime: "8 min read",
+      link: "https://www.drworkout.fitness/8-week-strength-building-workout-program-for-beginners/"
     },
     {
       id: 2,
@@ -19,7 +20,8 @@ const BlogGrid = () => {
       image: "https://images.unsplash.com/photo-1534258936925-c58bed479fcb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       category: "Science",
       date: "June 2, 2023",
-      readTime: "10 min read"
+      readTime: "10 min read",
+      link: "https://www.builtlean.com/muscles-grow/"
     },
     {
       id: 3,
@@ -28,7 +30,8 @@ const BlogGrid = () => {
       image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       category: "Home Training",
       date: "June 18, 2023",
-      readTime: "6 min read"
+      readTime: "6 min read",
+      link: "https://www.homeworkoutrevolution.com/"
     },
     {
       id: 4,
@@ -37,7 +40,8 @@ const BlogGrid = () => {
       image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       category: "Nutrition",
       date: "July 5, 2023",
-      readTime: "12 min read"
+      readTime: "12 min read",
+      link: "https://www.eatright.org/fitness/physical-activity/exercise-nutrition/timing-your-pre-and-post-workout-nutrition"
     },
     {
       id: 5,
@@ -46,7 +50,8 @@ const BlogGrid = () => {
       image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       category: "Time-Saving",
       date: "July 22, 2023",
-      readTime: "5 min read"
+      readTime: "5 min read",
+      link: "https://barbend.com/15-minute-workouts/"
     },
     {
       id: 6,
@@ -55,9 +60,22 @@ const BlogGrid = () => {
       image: "https://images.unsplash.com/photo-1534258936925-c58bed479fcb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       category: "Recovery",
       date: "August 10, 2023",
-      readTime: "9 min read"
+      readTime: "9 min read",
+      link: "https://barbend.com/best-mobility-exercises/"
     }
   ];
+
+  // Function to handle clicking the Read Article button
+  const handleReadArticle = (link) => {
+    // Check if link exists
+    if (link) {
+      // Open the link in a new tab
+      window.open(link, '_blank', 'noopener noreferrer');
+    } else {
+      // If no link is provided, show an alert or handle accordingly
+      alert('Article link not available');
+    }
+  };
 
   return (
     <div className="blog-container">
@@ -70,9 +88,9 @@ const BlogGrid = () => {
         {blogs.map((blog) => (
           <article key={blog.id} className="blog-card">
             <div className="blog-image-container">
-              <img 
-                src={blog.image} 
-                alt={blog.title} 
+              <img
+                src={blog.image}
+                alt={blog.title}
                 className="blog-image"
                 loading="lazy"
               />
@@ -86,7 +104,12 @@ const BlogGrid = () => {
                 <span>•</span>
                 <span>{blog.readTime}</span>
               </div>
-              <button className="read-more-btn">Read Article</button>
+              <button 
+                className="read-more-btn"
+                onClick={() => handleReadArticle(blog.link)}
+              >
+                Read Article
+              </button>
             </div>
           </article>
         ))}
