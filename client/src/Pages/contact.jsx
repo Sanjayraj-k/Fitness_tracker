@@ -36,7 +36,7 @@ const ChatAssistant = () => {
 
     try {
       // Call Flask backend
-      const response = await fetch('https://fitness-tracker-4-irsu.onrender.com/ask', {
+      const response = await fetch('https://fitness-tracker-5-c0ee.onrender.com/ask', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
