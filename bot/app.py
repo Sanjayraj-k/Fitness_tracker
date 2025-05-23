@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # API Key (Load from environment or replace with your actual key)
-GROQ_API_KEY = os.getenv("GROQ_API_KEY", "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")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 os.environ["GROQ_API_KEY"] = GROQ_API_KEY
 
 # Language Model Initialization
